@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+- White: hsl(0, 0%, 100%)
+- Light pink: hsl(275, 100%, 97%)
+- Grayish purple: hsl(292, 16%, 49%)
+- Dark purple: hsl(292, 42%, 14%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraphs): 16px
+
+### Font
+
+- Family: [Work Sans](https://fonts.google.com/specimen/Work+Sans)
+- Weights: 400, 600, 700
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-pink: hsl(275, 100%, 97%);
+  --color-grayish-purple: hsl(292, 16%, 49%);
+  --color-dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Work Sans", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--color-light-pink);
+}
+
+.hero-img {
+  height: auto;
+  width: 30px;
+}
+
+.headline {
+  display: flex;
+  padding-bottom: 25px;
+  margin-top: 15px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  padding-left: 16px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35vh;
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  z-index: -1;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+}
+
+.parent-container {
+  min-height: 600px;
+  width: 500px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 35px;
+  box-shadow: 0px 20px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+  margin-bottom: 9px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+
+.answer {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.answer .p {
+  padding-top: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.button {
+  border-style: none;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.icon-plus {
+  display: block;
+}
+
+.icon-minus {
+  display: none;
+}
+
+.faq.active .icon-plus {
+  display: none;
+}
+
+.faq.active .answer {
+  max-height: 300px;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
+
+.faq.active .icon-minus {
+  display: inline;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+@media screen and (max-width: 376px) {
+  body {
+    padding: 20px;
+  }
+  .parent-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #72ddf7 0%, #fdc5f5 100%);
+  transform: translate3d(0px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: 0.7; /* Fixed opacity variable */
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  .parent-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

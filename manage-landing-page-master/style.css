@@ -1,0 +1,349 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+### Primary
+
+Bright Red: hsl(12, 88%, 59%)
+Dark Blue: hsl(228, 39%, 23%)
+
+### Neutral
+
+Dark Grayish Blue: hsl(227, 12%, 61%)
+Very Dark Blue: hsl(233, 12%, 13%)
+Very Pale Red: hsl(13, 100%, 96%)
+Very Light Gray: hsl(0, 0%, 98%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Be Vietnam Pro](https://fonts.google.com/specimen/Be+Vietnam+Pro)
+- Weights: 400, 500, 700
+
+## Icons
+
+For the social icons, you can use the icons provided or a font icon library. Some suggestions for font icon libraries can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+  --bright-red: hsl(12, 88%, 59%);
+  --dark-blue: hsl(228, 39%, 23%);
+  --dark-grayish-blue: hsl(227, 12%, 61%);
+  --very-dark-blue: hsl(233, 12%, 13%);
+  --very-pale-red: hsl(13, 100%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+/* Typography */
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--dark-grayish-blue);
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  margin: 0; /* Remove default margin */
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: var(--dark-blue);
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--bright-red);
+}
+
+/* Font Awesome Integration */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Social Icon Classes */
+.fa-facebook {
+  color: #3b5998; /* Facebook color */
+}
+
+.fa-twitter {
+  color: #00acee; /* Twitter color */
+}
+
+.fa-instagram {
+  color: #e1306c; /* Instagram color */
+}
+
+.fa-pinterest {
+  color: #bd081c; /* Pinterest color */
+}
+
+/* Background Image */
+body::before {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute; /* Position it absolutely */
+  top: -120px; /* Align to the top */
+  right: -65px; /* Align to the right */
+  width: 740px; /* Set the width of the pseudo-element */
+  height: 800px; /* Set the height of the pseudo-element */
+  background: url(./images/bg-tablet-pattern.svg) no-repeat; /* Set the background image */
+  background-size: contain; /* Ensure the background scales correctly */
+  z-index: -1; /* Send it behind the content */
+}
+
+/* Navigation */
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Corrected grid layout */
+  align-items: center;
+  margin-top: 5%;
+}
+
+.nav img {
+  grid-column: 1;
+  margin-top: 2%;
+  justify-self: start;
+}
+
+.categories {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.nav-button {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.categories ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.categories a {
+  text-decoration: none;
+}
+.categories ul li {
+  padding: 20px;
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+}
+
+button {
+  color: black;
+  background-color: var(--very-pale-red); /* Added background color */
+  padding: 15px;
+  width: 120px;
+  border: none; /* Added to remove default button border */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--bright-red); /* Added hover effect */
+}
+
+/* Landing Section */
+.landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 7%;
+}
+
+.landing-left {
+  grid-column: 1;
+  justify-self: start;
+  margin-top: 12%;
+}
+
+.landing-left .left-heading > h2 {
+  font-size: 3rem;
+  padding-right: 14%;
+  padding-bottom: 4%;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.left-paragraph > p {
+  font-size: 1.2rem;
+  padding-right: 200px;
+  padding-bottom: 4%;
+  line-height: 1.5;
+  color: var(--dark-grayish-blue);
+}
+
+.landing-right {
+  grid-column: 2;
+  justify-self: end;
+}
+
+/* Section 1 */
+.section-1-img-bg::before {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: -80px; /* Align to the top */
+  right: 0px;
+  width: 800px; /* Set the width of the pseudo-element */
+  height: 800px;
+  background: url('./images/bg-tablet-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.section-1 {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-1-left {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.section-1-left > h1 {
+  font-weight: 700;
+  padding-bottom: 20px;
+  color: var(--very-dark-blue);
+  font-size: 2rem;
+  width: 350px;
+}
+
+.section-1-left > p {
+  font-weight: 200;
+  max-width: 400px;
+  font-size: 1.2rem;
+  color: var(--dark-grayish-blue);
+  line-height: 1.2;
+}
+
+.section-1-left > .section-1-right {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-1-right .component-1 {
+  display: flex;
+}
+
+.section-1-right .component-2 {
+  display: flex;
+}
+
+.section-1-right .component-3 {
+  display: flex;
+}
+
+.numbered-buttons > button {
+  background-color: var(--bright-red);
+  width: 70px;
+  border-radius: 50px;
+  margin-right: 25px;
+  color: var(--very-light-gray);
+}
+
+.content > h1 {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 10px;
+  padding-bottom: 12px;
+  color: var(--very-dark-blue);
+}
+
+.content > p {
+  font-weight: 200;
+  font-size: 1rem;
+  padding-bottom: 20px;
+  padding-right: 25px;
+  color: var(--dark-grayish-blue);
+  line-height: 1.6;
+}
+/* Testimonial Section */
+
+/* Swiper Carousel */
+.swiper-container {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content-item {
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.content-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.content-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.content-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-radio {
+  margin: 0 5px;
+  cursor: pointer;
+}

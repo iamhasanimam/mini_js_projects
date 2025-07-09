@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="parent">
+      <div class="sidebar">
+        <ul>
+          <li data-step="0">
+            <div class="sidebarNumbers">
+              <div class="numbers">
+                <h5>1</h5>
+              </div>
+              <div class="stepDetails">
+                <p>STEP 1</p>
+                <p>YOUR INFO</p>
+              </div>
+            </div>
+          </li>
+          <li data-step="1">
+            <div class="sidebarNumbers">
+              <div class="numbers">
+                <h5>2</h5>
+              </div>
+              <div class="stepDetails">
+                <p>STEP 2</p>
+                <p>SELECT PLAN</p>
+              </div>
+            </div>
+          </li>
+          <li data-step="2">
+            <div class="sidebarNumbers">
+              <div class="numbers">
+                <h5>3</h5>
+              </div>
+              <div class="stepDetails">
+                <p>STEP 3</p>
+                <p>ADD-ONS</p>
+              </div>
+            </div>
+          </li>
+          <li data-step="3">
+            <div class="sidebarNumbers">
+              <div class="numbers">
+                <h5>4</h5>
+              </div>
+              <div class="stepDetails">
+                <p>STEP 4</p>
+                <p>SUMMARY</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <form action="" id="multiStepForm">
+          <!-- Step 1 start-->
+          <div class="step active" id="step1">
+            <h3>Personal info</h3>
+            <p>Please provide your name, email address, and phone number.</p>
+            <label for="name"> Name </label>
+            <input type="text" id="name" placeholder="e.g. poja chor " />
+            <span class="error" id="nameError"></span>
+
+            <label for="email"> Email Address </label>
+            <input type="email" id="email" placeholder="e.g. name@domain.com" />
+            <span class="error" id="emailError"></span>
+
+            <label for="tel"> Phone Number </label>
+            <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" />
+            <span class="error" id="phoneError"></span>
+
+            <button class="step1Button">Next Step</button>
+            <div class="message"></div>
+
+            <!--Step 1 End-->
+          </div>
+
+          <!--Step 2-->
+          <div class="step" id="step2">
+            <h3>Select your plan</h3>
+            <p>You have the option of monthly or yearly billing</p>
+            <div class="plans">
+              <div class="plan-card" data-plan="arcade">
+                <img src="./assets/images/icon-arcade.svg" alt="" />
+                <p>Arcade</p>
+                <span class="price">$9/mo</span>
+              </div>
+              <div class="plan-card" data-plan="advanced">
+                <img src="./assets/images/icon-advanced.svg" alt="" />
+                <p>Advanced</p>
+                <span class="price">$12/mo</span>
+              </div>
+              <div class="plan-card" data-plan="pro">
+                <img src="./assets/images/icon-pro.svg" alt="" />
+                <p>pro</p>
+                <span class="price">$15/mo</span>
+              </div>
+            </div>
+            <div class="toggle-container">
+              <span class="label">Monthly</span>
+              <label class="switch">
+                <input type="checkbox" id="billingToggle" />
+                <span class="slider round"></span>
+              </label>
+              <span class="label">Yearly</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
